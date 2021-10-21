@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 public class main extends Application{
 
     public void start(Stage primaryStage){
-        primaryStage.setTitle("Demo");
+        primaryStage.setTitle("Hello World !");
         Group root = new Group();
         Scene scene = new Scene(root, 600, 400,true);
         primaryStage.setScene(scene);
