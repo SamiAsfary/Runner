@@ -7,12 +7,12 @@ public class staticThings {
     private double x, y;
     private ImageView sprite;
 
-    public staticThings(int xStart,int yStart,int xEnd,int yEnd, String imgPath,int xpos, int ypos){
+    public staticThings( String imgPath,int xpos, int ypos){
         this.x = xpos;
         this.y = ypos;
         Image spriteSheet = new Image(imgPath);
         this.sprite = new ImageView(spriteSheet);
-        this.sprite.setViewport(new Rectangle2D(xStart,yStart,xEnd-xStart,yEnd-yStart));
+        //this.sprite.setViewport(new Rectangle2D(xStart,yStart,xEnd-xStart,yEnd-yStart));
         this.sprite.setX( x );
         this.sprite.setY( y );
     }
@@ -28,5 +28,10 @@ public class staticThings {
 
     public ImageView getSprite() {
         return sprite;
+    }
+
+    public void update(long posx) {
+        x = posx;
+        this.sprite.setX( x );
     }
 }
