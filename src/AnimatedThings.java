@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 public abstract class AnimatedThings {
 
-    private double x,y;
+    protected double x,y;
+    protected float vx = 0,ax = 0;
     private ImageView sprite;
     protected int state = 0,index = 0;
     private Image spriteSheet;
@@ -34,6 +35,8 @@ public abstract class AnimatedThings {
     }
 
     public ImageView getSprite(){return sprite;}
+
+    public void setState(int newstate){state = newstate;}
 
 }
 

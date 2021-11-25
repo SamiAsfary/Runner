@@ -17,8 +17,13 @@ public class GameScene extends Scene {
         this.right = new staticThings("\\desert.png",800-xtest%800, 0 );
         parent.getChildren().add(this.left.getSprite());
         parent.getChildren().add(this.right.getSprite());
-        this.nous = new Hero("\\heros.png", 50, 240 );
+        this.nous = new Hero("\\heros.png", 50, 10 );
         parent.getChildren().add(this.nous.getSprite());
+        this.setOnMouseClicked((event)->{
+            System.out.println("Jump");
+            nous.jump();
+        });
+
     }
 
     public Hero getHero (){return nous;}
@@ -28,7 +33,7 @@ public class GameScene extends Scene {
         long leftx = -time, rightx = 800-time;
         this.left.update(leftx);
         this.right.update(rightx);
-
+        nous.update(time);
     }
 
 

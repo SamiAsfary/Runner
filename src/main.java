@@ -29,7 +29,6 @@ public class main extends Application{
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long time) {
-                scene.getHero().update(time);
                 scene.update(time);
             }
         };
