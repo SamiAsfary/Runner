@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public abstract class AnimatedThings {
 
     protected double x,y;
-    protected float vx = 0,ax = 0;
+    protected float vy = 0, ay = 0;
     private ImageView sprite;
     protected int state = 0,index = 0;
     private Image spriteSheet;
@@ -36,7 +36,29 @@ public abstract class AnimatedThings {
 
     public ImageView getSprite(){return sprite;}
 
+    public boolean intersect(AnimatedThings sec){
+        if(((this.x > sec.getx() && this.x < sec.getx() + sec.getsizex())||
+                (this.x+this.sizex > sec.getx() && this.x+this.sizex < sec.getx() + sec.getsizex()))
+                &&
+                ((this.y > sec.gety() && this.y < sec.gety() + sec.getsizey())||
+                        (this.y+this.sizey > sec.gety() && this.y+this.sizey < sec.gety() + sec.getsizey()))){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public double getx(){return x;}
+
+    public double gety(){return y;}
+
+    public double getsizex(){return sizex;}
+
+    public double getsizey(){return sizey;}
+
     public void setState(int newstate){state = newstate;}
+
 
 }
 
